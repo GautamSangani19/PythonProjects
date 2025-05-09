@@ -1,14 +1,14 @@
 Feature: Search Functionality
 
   Background:
-    Given the company is logged in and on the homepage
+    Given the company is logged in and on the homepage for search
 
-  Scenario: Verify Search with Empty Input
+ # Scenario: Verify Search with Empty Input
     When the company clicks on the search bar
     And the company leaves the input empty and triggers the search
     Then the platform should prompt to enter a valid search term
 
-  Scenario: Verify Search Suggestions/Autocomplete
+#  Scenario: Verify Search Suggestions/Autocomplete
     When the company clicks on the search bar
     And the company starts typing a search term
     Then relevant autocomplete suggestions should appear

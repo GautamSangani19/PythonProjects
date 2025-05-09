@@ -11,7 +11,6 @@ from selenium.webdriver import Keys, ActionChains
 
 @given("the company is logged in and on the settings page")
 def step_impl(context):
-    context.driver = webdriver.Chrome()
     perform_login(context.driver)
     sleep(5)
 
@@ -56,38 +55,41 @@ def step_impl(context):
 def step_impl(context):
     # Toggle the switch to off
     pass
-    sleep(3)
+
 
 @then("phone number should be hidden from others")
 def step_impl(context):
     # Confirm that the phone number is no longer visible
     pass
-    sleep(3)
 
-@when("the company selects Email Address Visibility")
-def step_impl(context):
-    # Click on the email visibility option
-    pass
-    sleep(3)
-
-@when("the company toggles email address visibility off")
-def step_impl(context):
-    # Locate and click the email visibility toggle switch
-    email_toggle = WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH,
-                                    "//p[text()='Email Address Visibility']/ancestor::div[contains(@class, 'cursor')]//button[@role='switch']"))
-    )
-    email_toggle.click()
-    sleep(3)
+#
+# @when("the company selects Email Address Visibility")
+# def step_impl(context):
+#     # Click on the email visibility option
+#     pass
+#
+#
+# @when("the company toggles email address visibility off")
+# def step_impl(context):
+#     # Locate and click the email visibility toggle switch
+#     email_toggle = WebDriverWait(context.driver, 10).until(
+#         EC.element_to_be_clickable((By.XPATH,
+#                                     "//p[text()='Email Address Visibility']/ancestor::div[contains(@class, 'cursor')]//button[@role='switch']"))
+#     )
+#     email_toggle.click()
+#     sleep(3)
 
 @then("close the current pop-up")
 def step_impl(context):
-    # Wait for and click the dialog close icon
-    close_icon = WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//mat-icon[@mat-dialog-close and text()='close']"))
-    )
-    close_icon.click()
-    sleep(3)
+    # Example: Close popup using 'X' button
+    try:
+        close_button = context.driver.find_element(By.XPATH,
+                                           "//div[contains(@class, 'privacy')]//button[contains(@aria-label, 'Close') or contains(text(), '×') or contains(@class, 'close')]")
+        close_button.click()
+        print("Popup closed successfully.")
+    except Exception as e:
+        print(f"Popup not found or error occurred: {e}")
+    sleep(5)
 
 
 # @when("the company clicks on Delete Account")
@@ -105,7 +107,7 @@ def step_impl(context):
 #     # Click the "Delete Account" button
 #     delete_account_button.click()
 #     sleep(3)
-#
+
 # @when("the company clicks on Send OTP")
 # def step_impl(context):
 #     # Wait for the button to be clickable

@@ -11,7 +11,6 @@ from selenium.webdriver import Keys, ActionChains
 
 @given("the company is on the Home page for Payment History")
 def step_impl(context):
-    context.driver = webdriver.Chrome()
     perform_login(context.driver)
     sleep(5)
 

@@ -11,7 +11,6 @@ from selenium.webdriver import Keys
 
 @given("the company is on the coin history page")
 def step_impl(context):
-    context.driver = webdriver.Chrome()
     perform_login(context.driver)
     sleep(5)
 

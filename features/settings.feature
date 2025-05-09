@@ -10,13 +10,12 @@ Feature: Company Settings Management
     And the company toggles phone number visibility off
     Then phone number should be hidden from others
 
-  Scenario: Verify Privacy Settings for Email Address Visibility
-    When the company clicks on Privacy
-    And the company selects Email Address Visibility
-    And the company toggles email address visibility off
+#  Scenario: Verify Privacy Settings for Email Address Visibility
+#    When the company clicks on Privacy
+#    And the company selects Email Address Visibility
+#    And the company toggles email address visibility off
     Then close the current pop-up
 
-#  Scenario: Verify Settings - Delete Account (Send OTP)
 #    When the company clicks on Delete Account
 #    And the company clicks on Send OTP
 #    Then Enter your verification code

@@ -17,8 +17,6 @@ options.add_experimental_option("useAutomationExtension", False)
 
 @given("the company is on the login page")
 def perform_login(driver):
-    driver.maximize_window()
-
     #river.get("https://devrecruiter.foodismconnect.com/auth/login")
     driver.get("https://dev-polypackrecruiter.foodismconnect.com/")
     sleep(2)

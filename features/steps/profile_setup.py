@@ -12,7 +12,6 @@ from selenium.webdriver import Keys
 @given("the company is on the profile setup page")
 @allure.step("the company is on the profile setup page")
 def step_impl(context):
-    context.driver = webdriver.Chrome()
     perform_login(context.driver)
     sleep(10)
 
