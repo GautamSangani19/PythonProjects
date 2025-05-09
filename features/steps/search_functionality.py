@@ -75,5 +75,5 @@ def step_impl(context):
 
     # 4. Optional: Press Enter to trigger search
     search_input.send_keys(Keys.ENTER)
-    sleep(2)
+    sleep(5)
     search_input.clear()

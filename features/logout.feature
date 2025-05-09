@@ -9,3 +9,4 @@ Feature: Logout functionality
     When the company clicks on the Logout button
     Then the company should be logged out of the platform
     And the login screen should be displayed
+

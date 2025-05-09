@@ -8,4 +8,5 @@ Feature: Company Delete Account
     Then the company clicks on Delete Account
     Then the company clicks on Send OTP
     Then Enter your verification code
+    Then Delete account successfully
 

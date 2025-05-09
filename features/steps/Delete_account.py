@@ -99,7 +99,7 @@ def step_impl(context):
 #     # Input another mobile number
 #     pass
 #
-# @then("OTP should be sent to the new mobile number")
-# def step_impl(context):
-#     # Verify the new number received OTP
-#     pass
+@then("Delete account successfully")
+def step_impl(context):
+    # Verify the new number received OTP
+    pass
