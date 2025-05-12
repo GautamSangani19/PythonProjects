@@ -24,6 +24,7 @@ def step_impl(context):
         EC.element_to_be_clickable((By.XPATH, "//button[contains(., 'Post a Job')]"))
     )
     post_job_button.click()
+    sleep(2)
 
 @then("the user add the job title")
 def step_impl(context):
@@ -33,6 +34,7 @@ def step_impl(context):
     )
     # Send value to the field
     job_title_input.send_keys("Senior QA Engineer")
+    sleep(2)
 
 @then("the company selects the type of job")
 def step_impl(context):
@@ -43,6 +45,7 @@ def step_impl(context):
         (By.XPATH, "//mat-select[@formcontrolname='type']"))
     )
     dropdown.click()
+    sleep(2)
 
     # 2. Select the desired option from the dropdown
     # Replace 'Full-Time' with the actual visible text you want to select
@@ -99,4 +102,4 @@ def step_impl(context):
         (By.XPATH, "//img[contains(@src, 'carbon_edit.png')]")
     ))
     edit_icon.click()
-    sleep(3)
+    sleep(10)

@@ -13,7 +13,7 @@ from selenium.webdriver import Keys, ActionChains
 
 
 # Windows-style image path (escaped)
-image_path = r"C:\Users\admin\Downloads\test.jpg"
+image_path = r"C:\Users\ABCD\Downloads\Sample.jpg"
 
 @given("the company is logged in and on the settings page for support")
 def step_impl(context):
@@ -85,4 +85,5 @@ def step_impl(context):
         (By.XPATH, "//button[.//span[text()='Submit']]")
     ))
     submit_button.click()
+    sleep(5)
 
