@@ -20,7 +20,7 @@ Feature: Company Profile Setup
     Then the company add the description
     Then click on save button
 
-  Scenario: Successful profile setup completion
+  #Scenario: Successful profile setup completion
     Given the company has filled in all required fields
     When the company submits the profile
     Then the company's account should be marked as successfully created

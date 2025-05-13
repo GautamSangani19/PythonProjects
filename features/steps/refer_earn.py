@@ -89,3 +89,4 @@ def step_impl(context):
     )))
     yes_button.click()
     sleep(3)
+    context.driver.save_screenshot("refer_error_screenshot.png")  # Save the screenshot in the project root

@@ -13,7 +13,8 @@ from selenium.webdriver import Keys, ActionChains
 
 
 # Windows-style image path (escaped)
-image_path = r"C:\Users\ABCD\Downloads\Sample.jpg"
+#image_path = r"C:\Users\ABCD\Downloads\Sample.jpg"
+image_path = r"C:\Users\admin\Downloads\test.jpg"
 
 @given("the company is logged in and on the settings page for support")
 def step_impl(context):
@@ -85,5 +86,7 @@ def step_impl(context):
         (By.XPATH, "//button[.//span[text()='Submit']]")
     ))
     submit_button.click()
+
+    context.driver.save_screenshot("support_error_screenshot.png")  # Save the screenshot in the project root
     sleep(5)
 

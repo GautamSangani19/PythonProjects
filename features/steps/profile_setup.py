@@ -77,7 +77,7 @@ def step_impl(context):
     )
     # Clear and enter email
     email_input.clear()
-    email_input.send_keys("Gautam@yopmail.com")
+    email_input.send_keys("Gautam45@yopmail.com")
     sleep(3)
 
 @then("the company add the Type of Establishment")
