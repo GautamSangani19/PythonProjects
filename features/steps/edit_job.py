@@ -11,7 +11,7 @@ from selenium.webdriver import Keys, ActionChains
 
 @given("the company is logged in for edit job detail")
 def step_impl(context):
-    perform_login(context.driver)
+    perform_login(context)
     sleep(3)
 
 @when("click on the more details button")

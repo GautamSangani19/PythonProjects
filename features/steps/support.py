@@ -18,7 +18,7 @@ image_path = r"C:\Users\admin\Downloads\test.jpg"
 
 @given("the company is logged in and on the settings page for support")
 def step_impl(context):
-    perform_login(context.driver)
+    perform_login(context)
     sleep(3)
 
 @when("the company is logged in and on the settings page for support")

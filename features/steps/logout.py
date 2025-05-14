@@ -11,7 +11,7 @@ from features.login_utils import perform_login
 
 @given("the company is logged into the platform for test")
 def step_impl(context):
-    perform_login(context.driver)
+    perform_login(context)
     sleep(5)
 
 @when("the company clicks on the Logout button")

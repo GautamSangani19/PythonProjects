@@ -16,7 +16,7 @@ image_path = r"C:\Users\admin\Downloads\test.jpg"
 
 @given("the company is logged in for filter option")
 def step_impl(context):
-    perform_login(context.driver)
+    perform_login(context)
     sleep(5)
 
 @when("click on machine tab list")

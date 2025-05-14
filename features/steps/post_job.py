@@ -9,13 +9,11 @@ from features.login_utils import perform_login
 from time import sleep
 
 @given("the company is on the login page for add job")
-@allure.step("the company is on the login page for add job")
 def step_impl(context):
-    perform_login(context.driver)
+    perform_login(context)
     sleep(2)
 
 @when("the user is on the Post a Job page")
-@allure.step("the user is on the Post a Job page")
 def step_impl(context):
     # Wait for the button and click it
     post_job_button = WebDriverWait(context.driver, 10).until(
@@ -24,7 +22,6 @@ def step_impl(context):
     post_job_button.click()
 
 @then("the user fills out the job form with valid data")
-@allure.step("the user fills out the job form with valid data")
 def step_impl(context):
     # Wait until the job title input field is visible
     job_title_input = WebDriverWait(context.driver, 10).until(
@@ -34,7 +31,6 @@ def step_impl(context):
     job_title_input.send_keys("Senior QA Engineer")
 
 @then("the company selects the Looking For option")
-@allure.step("the company selects the Looking For option")
 def step_impl(context):
 
     wait = WebDriverWait(context.driver, 20)

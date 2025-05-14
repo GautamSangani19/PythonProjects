@@ -13,7 +13,7 @@ from selenium.webdriver import Keys, ActionChains
 
 @given("the company is logged in and on the homepage for search")
 def step_impl(context):
-    perform_login(context.driver)
+    perform_login(context)
     sleep(5)
 
 @when("the company clicks on the search bar")

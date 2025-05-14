@@ -11,7 +11,7 @@ from selenium.webdriver import Keys, ActionChains
 
 @given("the company is logged in and on the settings page for delete account")
 def step_impl(context):
-    perform_login(context.driver)
+    perform_login(context)
     sleep(5)
 
 @when("the company is logged in and on the settings page for delete account")
@@ -67,7 +67,7 @@ def step_impl(context):
 
     # Send OTP digits (replace '123456' with actual OTP value)
     otp_input.send_keys("000000")
-    sleep(10)
+    sleep(5)
 
 # @when("the company selects their own number")
 # def step_impl(context):
@@ -101,5 +101,10 @@ def step_impl(context):
 #
 @then("Delete account successfully")
 def step_impl(context):
-    # Verify the new number received OTP
-    pass
+    # Wait for the button to be clickable
+    wait = WebDriverWait(context.driver, 10)
+    submit_button = wait.until(EC.element_to_be_clickable((By.XPATH, "(// p[normalize-space() = 'Submit'])[1]")))
+
+    # Click the button
+    submit_button.click()
+    sleep(5)

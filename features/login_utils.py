@@ -5,8 +5,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 
-
-
 options = Options()
 options.add_argument("--disable-infobars")
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
@@ -16,27 +14,28 @@ options.add_experimental_option("useAutomationExtension", False)
 
 
 @given("the company is on the login page")
-def perform_login(driver):
+def perform_login(context):
     #river.get("https://devrecruiter.foodismconnect.com/auth/login")
-    driver.get("https://dev-polypackrecruiter.foodismconnect.com/")
+    context.driver.get("https://dev-polypackrecruiter.foodismconnect.com/")
     sleep(2)
-    mobile_input = WebDriverWait(driver, 10).until(
+    mobile_input = WebDriverWait(context.driver, 10).until(
         EC.visibility_of_element_located((By.XPATH, "//input[@formcontrolname='mobileNumber']"))
     )
     #mobile_input.send_keys("8000505310")
     #mobile_input.send_keys("8320373338")
-    mobile_input.send_keys("8155868675")
+    #mobile_input.send_keys("8155868675")
+    mobile_input.send_keys("9909274230")
 
     sleep(2)
 
-    login_button = WebDriverWait(driver, 10).until(
+    login_button = WebDriverWait(context.driver, 10).until(
         EC.element_to_be_clickable((By.CLASS_NAME, "login-btn"))
     )
     login_button.click()
     sleep(2)
 
     # Wait for OTP input field to appear and interact
-    otp_input = WebDriverWait(driver, 20).until(
+    otp_input = WebDriverWait(context.driver, 20).until(
         EC.visibility_of_element_located((By.XPATH, "//input[@autocomplete='one-time-code']"))
     )
     sleep(2)
@@ -48,7 +47,7 @@ def step_impl(context):
     pass
 
 
-@when("the company clicks on the 'Send OTP' button")
+@when("the company clicks on the Send OTP button")
 def step_impl(context):
     pass
 
@@ -61,11 +60,11 @@ def step_impl(context):
 def step_impl(context):
     pass
 
-@when("the company clicks on the 'Verify OTP' button")
+@when("the company clicks on the Verify OTP button")
 def step_impl(context):
     pass
 
-@then("the company should be redirected to the 'Add Profile Details' screen")
+@then("the company should be redirected to the Add Profile Details screen")
 def step_impl(context):
     sleep(5)
     pass

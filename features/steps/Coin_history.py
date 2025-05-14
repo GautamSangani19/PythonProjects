@@ -11,7 +11,7 @@ from selenium.webdriver import Keys
 
 @given("the company is on the coin history page")
 def step_impl(context):
-    perform_login(context.driver)
+    perform_login(context)
     sleep(5)
 
 @when("Click on Buy coins button")
@@ -204,27 +204,27 @@ def step_impl(context):
     # Optional: wait for OTP processing
     sleep(5)  # Keep minimal. Increase only if necessary.
 
-# @then("the company click on the menu")
-# def step_impl(context):
-# # Wait until the "Edit Profile" button is visible and clickable
-#     wait = WebDriverWait(context.driver, 10)
-#     menu_button = wait.until(EC.element_to_be_clickable(
-#         (By.XPATH, "//mat-icon[normalize-space()='keyboard_arrow_down']")
-#     ))
-# # Click the button
-#     menu_button.click()
-#     sleep(3)
-#
-#
-# @then("Click on Coin history button")
-# def step_impl(context):
-#     # Wait for and click the "Buy Coins" button
-#     wait = WebDriverWait(context.driver, 10)
-#     Coin_history_button = wait.until(EC.element_to_be_clickable(
-#         (By.XPATH, "//button[@role='menuitem']//span[normalize-space()='Coin History']")))
-#
-#     Coin_history_button.click()
-#     sleep(3)
+@then("the company click on the menu")
+def step_impl(context):
+# Wait until the "Edit Profile" button is visible and clickable
+    wait = WebDriverWait(context.driver, 10)
+    menu_button = wait.until(EC.element_to_be_clickable(
+        (By.XPATH, "//mat-icon[normalize-space()='keyboard_arrow_down']")
+    ))
+# Click the button
+    menu_button.click()
+    sleep(3)
+
+
+@then("Click on Coin history button for history list")
+def step_impl(context):
+    # Wait for and click the "Buy Coins" button
+    wait = WebDriverWait(context.driver, 10)
+    Coin_history_button = wait.until(EC.element_to_be_clickable(
+        (By.XPATH, "//button[@role='menuitem']//span[normalize-space()='Coin History']")))
+
+    Coin_history_button.click()
+    sleep(3)
 
 
 

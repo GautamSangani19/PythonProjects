@@ -7,11 +7,11 @@ Feature: Company Login Options - Mobile Number and Google Authentication
 
   Scenario: Successful login with valid mobile number and OTP
     When the company enters a valid 10-digit mobile number
-    And the company clicks on the 'Send OTP' button
+    And the company clicks on the Send OTP button
     Then a 6-digit OTP should be sent to the registered mobile number
     When the company enters the correct OTP within 30 seconds
-    And the company clicks on the 'Verify OTP' button
-    Then the company should be redirected to the 'Add Profile Details' screen
+    And the company clicks on the Verify OTP button
+    Then the company should be redirected to the Add Profile Details screen
 #
 #  Scenario: Resend OTP if not received or expired (Mobile Login)
 #    When the company enters a valid 10-digit mobile number

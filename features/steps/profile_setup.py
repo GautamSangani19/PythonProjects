@@ -12,11 +12,10 @@ from selenium.webdriver import Keys
 @given("the company is on the profile setup page")
 @allure.step("the company is on the profile setup page")
 def step_impl(context):
-    perform_login(context.driver)
+    perform_login(context)
     sleep(10)
 
 @when("the company fills in all mandatory fields")
-@allure.step("the company fills in all mandatory fields")
 def step_impl(context):
     name = WebDriverWait(context.driver, 10).until(
         EC.visibility_of_element_located((By.ID, "mat-input-1"))

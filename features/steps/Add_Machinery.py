@@ -13,7 +13,7 @@ image_path = r"C:\Users\admin\Downloads\test.jpg"
 
 @given("the company is logged in and on the menu for add machinery")
 def step_impl(context):
-    perform_login(context.driver)
+    perform_login(context)
     sleep(5)
 
 @when("the company is logged in and on the menu for add machinery")

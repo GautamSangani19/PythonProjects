@@ -10,7 +10,7 @@ from selenium.webdriver import Keys
 
 @given("the company is on the edit profile setup page")
 def step_impl(context):
-    perform_login(context.driver)
+    perform_login(context)
     sleep(5)
 
 

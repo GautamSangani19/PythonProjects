@@ -10,7 +10,7 @@ from selenium.webdriver import Keys
 
 @given("the company is on the draft page")
 def step_impl(context):
-    perform_login(context.driver)
+    perform_login(context)
     sleep(5)
 
 @when("the user is in the home screen for draft a job")

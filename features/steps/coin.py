@@ -11,7 +11,7 @@ from selenium.webdriver import Keys, ActionChains
 
 @given("the company is on the Home page")
 def step_impl(context):
-    perform_login(context.driver)
+    perform_login(context)
     sleep(5)
 
 
@@ -95,10 +95,12 @@ def step_impl(context):
 
     # Wait and select the start date
     start_date = WebDriverWait(context.driver, 10).until(EC.element_to_be_clickable(
-        (By.XPATH, "//td[normalize-space()='1']")  # Adjust based on calendar structure
+        (By.XPATH, "//td[normalize-space()='7']")  # Adjust based on calendar structure
     ))
     start_date.click()
     sleep(4)
+    start_date.click()
+
 
 @then("select the end date")
 def step_impl(context):
@@ -151,10 +153,13 @@ def step_impl(context):
 
     # Wait and click date (e.g., "15")
     end_date = WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//td[normalize-space()='9']"))
+        EC.element_to_be_clickable((By.XPATH, "//td[normalize-space()='14']"))
     )
     end_date.click()
     sleep(2)
+    end_date.click()
+
+
 
 @then("click on type selection")
 def step_impl(context):

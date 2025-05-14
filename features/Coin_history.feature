@@ -13,4 +13,4 @@ Feature: Buy Coins Process
     And Enter OTP
     And submit OTP
     And the company click on the menu
-    And Click on Coin history button
+    And Click on Coin history button for history list
