@@ -39,8 +39,7 @@ feature_batches = [
         "features/refer_earn.feature",
         "features/settings.feature",
         "features/support.feature",
-        "features/logout.feature"
-
+        "features/logout.feature",
         "features/Delete_account.feature"
     ]
 ]

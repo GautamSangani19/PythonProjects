@@ -1,9 +1,10 @@
-from time import sleep
+import allure
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
+from time import sleep
 
 options = Options()
 options.add_argument("--disable-infobars")
@@ -11,8 +12,8 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option("useAutomationExtension", False)
 
 #driver = context.driver.Chrome(options=options)
-
-
+@allure.title("Test Login Functionality")
+@allure.description("This test checks successful login with valid credentials.")
 @given("the company is on the login page")
 def perform_login(context):
     #river.get("https://devrecruiter.foodismconnect.com/auth/login")
@@ -45,7 +46,6 @@ def perform_login(context):
 @when("the company enters a valid 10-digit mobile number")
 def step_impl(context):
     pass
-
 
 @when("the company clicks on the Send OTP button")
 def step_impl(context):
